@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header name="IMAGE SEARCH" />
-        <h1>working!</h1>
+        <Header name="The Stylephile" />
+        <p>Upload an image to find related styles</p>
         <UploadContainer />
       </div>
     );
