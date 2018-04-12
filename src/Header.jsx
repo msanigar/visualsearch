@@ -14,8 +14,8 @@ const Header = ({name}) => {
 
   return (
     <header className="header">
-      <div class="container">
-        <span class="text color-text-flow">
+      <div className="container">
+        <span className="text color-text-flow">
           <h1>{splitChars()}</h1>
         </span>
       </div>
