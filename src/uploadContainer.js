@@ -14,8 +14,8 @@ export default class UploadContainer extends Component {
         let data = new FormData( evt.currentTarget.parentNode );
 
         fetch( this.state.url, { method : 'post', body : data })
-            .then( res => console.log( 'res : ', res ))
-            .catch( er => console.error( er ));
+        .then( res => console.log( 'res : ', res ))
+        .catch( er => console.error( er ));
 
     }
 
