@@ -7,6 +7,7 @@ call to graphql with skus arr
 
 https://localhost:9001/graphiql
 
+```
 example of how to do this:
 
 function getDataWithKey() {
@@ -30,3 +31,4 @@ function getDataWithKey() {
 		});
 	});
 }
+```
