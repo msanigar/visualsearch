@@ -1,9 +1,5 @@
 @import "vars";
 
-h1 {
-    color: $red;
-}
-
 .color-text-flow span,
 .color-text-flow-hover:hover span {
   animation-name: color-text-flow-keys;
