@@ -7,6 +7,11 @@ export default class UploadContainer extends Component {
         this.state = {
             url : 'http://localhost:8000/api/upload'
         };
+        this.handleSuccess = this.handleSuccess.bind(this)
+    }
+
+    handleSuccess(res) {
+        this.props.forward(res)
     }
 
     evtChange_upload( evt ){
@@ -14,7 +19,7 @@ export default class UploadContainer extends Component {
         let data = new FormData( evt.currentTarget.parentNode );
 
         fetch( this.state.url, { method : 'post', body : data })
-        .then( res => console.log( 'res : ', res ))
+        .then( res => this.handleSuccess(res))
         .catch( er => console.error( er ));
 
     }

@@ -1,32 +1,43 @@
 import React, { Component } from 'react';
 import UploadContainer from './uploadContainer';
-import axios from 'axios'
-
+import ProductContainer from './ProductContainer'
 import Header from './Header'
 
 class App extends Component {
 
   constructor(props) {
     super(props)
-    this.renderProducts = this.renderProducts.bind(this)
+    this.state = {
+      returned: true,
+      skus: []
+    }
+    this.goBack = this.goBack.bind(this)
+    this.goForward = this.goForward.bind(this)
   }
 
-  renderProducts() {
-    const skus = ['DE911264', 'DE911264', 'DE911264']
-                
-    skus.map(sku => {
-      fetch(`https://media.missguided.com/s/missguided/${sku}_set`)
-      .then( res => console.log( 'res : ', res ))
-      .catch( err => console.error( err )); 
+  goBack() {
+    this.setState({
+      returned: false
+    })
+  }
+
+  goForward(res) {
+    this.setState({
+      returned: true,
+      skus: res
     })
   }
 
   render() {
     return (
       <div className="App">
-        <Header name={'APP'}/>
-        <UploadContainer />
-        { this.renderProducts() }
+        <Header name="The Stylephile" />
+        <p>Upload an image to find related styles</p>
+        { 
+          this.state.returned ? 
+          <ProductContainer skus={this.state.skus} back={this.goBack} /> : 
+          <UploadContainer forward={this.goForward} />
+        }
       </div>
     );
   }
