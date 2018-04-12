@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles/styles.scss"],"names":[],"mappings":"AAAA;EACE,WAAW,EAAE","file":"styles.css","sourcesContent":["h1 {\n  color: red; }\n\n\n\n// WEBPACK FOOTER //\n// ./src/styles/styles.scss"],"sourceRoot":""}
