@@ -93,7 +93,7 @@ button {
   display: block;
   padding: 1rem;
   width: 100%;
-  border: 3px dashed #626262;
+  border: 3px dashed #f55252;
   border-radius: 5px;
   cursor: pointer;
   margin: 0 auto;
@@ -111,7 +111,6 @@ button {
 
 .file-upload img {
   transform: rotate(90deg);
-  filter: sepia() saturate(10000%) hue-rotate(30deg);
   width: 90px;
 }
 
