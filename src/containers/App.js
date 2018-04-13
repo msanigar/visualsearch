@@ -45,16 +45,16 @@ class App extends Component {
     return (
       <div className="App">
 
-      { this.state.loading ? <h1>LOADING!!!!!</h1> : ''}
+        <div className={ this.state.loading ? "loading" : ''}>
 
-      <Header name="The Stylephile" />
-      <p>Upload an image to find related styles</p>
-      {this.state.returned ? (
-        <ProductContainer skus={this.state.skus} />
-      ) : (
-        <Upload forward={this.goForward} />
-      )}
-
+          <Header name="The Stylephile" />
+          <p>Upload an image to find related styles</p>
+          {this.state.returned ? (
+            <ProductContainer skus={this.state.skus} />
+          ) : (
+            <Upload forward={this.goForward} />
+          )}
+        </div>
       </div>
     );
   }
