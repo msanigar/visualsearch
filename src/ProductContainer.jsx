@@ -19,7 +19,7 @@ export default class ProductContainer extends Component {
                 <button onClick={this.handleClick}>go again?</button>
                 <div className="images">
                     { this.state.skus.map(( sku, i ) => 
-                        <div key={sku+i}><img src={`https://media.missguided.com/s/missguided/${sku}_set`} /> </div>
+                        <div key={sku+i}><img src={`https://media.missguided.com/s/missguided/${sku}_set`} alt="Product" /> </div>
                     )}
                 </div>
             </div>

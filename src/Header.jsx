@@ -15,7 +15,11 @@ const Header = ({name}) => {
   return (
     <header className="header">
         <span className="text color-text-flow">
-          <h1>🦄 {splitChars()} 🦄</h1>
+          <h1>
+            <span role="img" aria-label="unicorn" aria-labelledby="the-phile">🦄</span> 
+            {splitChars()} 
+            <span role="img" aria-label="unicorn" aria-labelledby="the-phile">🦄</span>
+          </h1>
         </span>
     </header>
   )
