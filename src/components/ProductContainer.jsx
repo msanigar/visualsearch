@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import store from '../redux/store';
+import { resetApp } from '../redux/actions';
+
 export default class ProductContainer extends Component {
     constructor(){
         super();
@@ -10,7 +13,7 @@ export default class ProductContainer extends Component {
     }
 
     handleClick() {
-        this.props.back()
+        store.dispatch(resetApp())
     }
 
     render(){

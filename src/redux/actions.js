@@ -4,6 +4,7 @@ import store from "./store";
 import axios from "axios";
 
 export const POST_IMG = "POST_IMG";
+export const RESET_APP = "RESET_APP";
 
 export function postImg(evt) {
   return (dispatch, getState) => {
@@ -24,4 +25,10 @@ function postProductImg(evt) {
       .then(res => res.data)
       .catch(er => console.error(er));
   });
+}
+
+export function resetApp() {
+    return (dispatch, getState) => {
+        dispatch({ type: RESET_APP })
+      };
 }

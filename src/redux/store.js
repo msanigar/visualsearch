@@ -3,15 +3,27 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { loadState, saveState } from './localStorage';
-import { POST_IMG } from "./actions";
+import { POST_IMG, RESET_APP } from "./actions";
 
 const mainReducer = (state = initialState, action) => {
   if (action.type === POST_IMG) {
     return postImg(state, action);
   }
 
+  if (action.type === RESET_APP) {
+      return reset(state, action);
+  }
+
   return state;
 };
+
+function reset(state, action) {
+    var newState = Object.assign({}, state);
+    newState.returned = false;
+    newState.loading = false;
+    newState.skus = []
+    return newState;
+}
 
 function postImg(state, action) {
   var newState = Object.assign({}, state);

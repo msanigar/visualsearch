@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import store from "../redux/store"
 import { postImg } from "../redux/actions";
-import Arrow from './arrow.svg';
+import Arrow from '../arrow.svg';
 
 export default class Upload extends Component {
   constructor(props) {
