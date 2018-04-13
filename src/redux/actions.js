@@ -27,9 +27,8 @@ export function loading(bool) {
   }
 }
 
-function postProductImg( element ) {
+function postProductImg( data ) {
   return new Promise(function(resolve, reject) {
-    let data = new FormData(element);
     return fetch("http://54.171.89.165:8080/", {
       method: "post",
       body: data

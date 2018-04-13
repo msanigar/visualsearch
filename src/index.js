@@ -7,6 +7,13 @@ import store from "./redux/store";
 
 import "./styles/styles.scss";
 
+window.addEventListener("dragover",function(e){
+  e.preventDefault();
+},false);
+window.addEventListener("drop",function(e){
+  e.preventDefault();
+},false);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
