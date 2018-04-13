@@ -17,6 +17,7 @@ export default class ProductContainer extends Component {
   }
 
   render() {
+      console.log(this.state)
     return (
       <div>
         <button onClick={this.handleClick}>go again?</button>

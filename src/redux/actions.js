@@ -11,13 +11,10 @@ export function postImg(evt) {
   return (dispatch, getState) => {
     setTimeout(function() {
       loading(false)
-      // postProductImg(evt).then(function(response) {
-    //   dispatch({ data: response, type: POST_IMG });
-    // });
-    dispatch({
-      data: ["DE911264", "DE911264", "DE911264", "DE911264"],
-      type: POST_IMG
+      postProductImg(evt).then(function(response) {
+      dispatch({ data: JSON.parse(response), type: POST_IMG });
     });
+
     }, 2000)
   };
 }
@@ -30,16 +27,15 @@ export function loading(bool) {
   }
 }
 
-function postProductImg(evt) {
+function postProductImg( element ) {
   return new Promise(function(resolve, reject) {
-    let data = new FormData(evt.currentTarget.parentNode);
-    return fetch("http://localhost:8000/api/upload", {
+    let data = new FormData(element);
+    return fetch("http://54.171.89.165:8080/", {
       method: "post",
       body: data
     })
-      .then(
-        res => res.data
-      )
+      .then(res => res.text())
+      .then(txt => resolve(txt))
       .catch(er => console.error(er));
   });
 }

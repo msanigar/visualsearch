@@ -11,7 +11,7 @@ export default class Upload extends Component {
 
   handleChange(evt) {
     store.dispatch(loading(true));
-    store.dispatch(postImg(evt));
+    store.dispatch(postImg(evt.currentTarget.parentNode));
   }
 
   render() {
@@ -24,7 +24,7 @@ export default class Upload extends Component {
           onChange={this.handleChange.bind(this)}
           type="file"
           id="file-upload"
-          name="file-upload"
+          name="photo"
           className="file-upload-input"
           multiple=""
         />

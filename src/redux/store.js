@@ -39,7 +39,7 @@ function postImg(state, action) {
   var newState = Object.assign({}, state);
   newState.returned = true;
   newState.loading = false;
-  newState.skus = ['sku', 'sku'];
+  newState.skus = action.data;
   return newState;
 }
 
