@@ -4,13 +4,13 @@
 @font-face {
   font-family: Missguided;
     font-weight: 700;
-    src: url('./fonts/missguided-bold.woff2') format("woff2");
+    src: url('http://www.mylessanigar.co.uk/stylephile/static/media/missguided-bold.woff2') format("woff2");
 }
 
 @font-face {
   font-family: Missguided;
   font-weight: 300;
-  src: url('./fonts/missguided-light.woff2') format("woff2");
+  src: url('http://www.mylessanigar.co.uk/stylephile/static/media/missguided-light.woff2') format("woff2");
 }
 
 body {
@@ -34,7 +34,7 @@ body {
     top: 0;
     left: 0;
     margin: 0 auto;
-    background: url('../loading_spinner.gif') no-repeat rgba(255, 196, 196, 0.7);
+    background: url('http://www.mylessanigar.co.uk/stylephile/static/media/loading_spinner.44271f65.gif') no-repeat rgba(255, 196, 196, 0.7);
     background-size: 50px;
     background-position: center center;
     animation: rainbow 2s steps(36) infinite;
