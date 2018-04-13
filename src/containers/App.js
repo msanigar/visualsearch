@@ -18,11 +18,17 @@ class App extends Component {
       skus,
 			returned,
 			unsubscribe: store.subscribe(this.onStoreUpdated.bind(this))
-		};
+    };
 	}
 
 	componentWillUnmount() {
 		this.state.unsubscribe();
+  }
+
+  componentDidMount() {
+    setTimeout(function() {
+      store.dispatch(actions.loading(false))
+    }, 2000)
   }
   
   onStoreUpdated() {
@@ -33,19 +39,22 @@ class App extends Component {
       skus,
       returned
 		});
-	}
-
+  }
+  
   render() {
-
     return (
       <div className="App">
-        <Header name="The Stylephile" />
-        <p>Upload an image to find related styles</p>
-        {this.state.returned ? (
-          <ProductContainer skus={this.state.skus} back={this.goBack} />
-        ) : (
-          <Upload forward={this.goForward} />
-        )}
+
+      { this.state.loading ? <h1>LOADING!!!!!</h1> : ''}
+
+      <Header name="The Stylephile" />
+      <p>Upload an image to find related styles</p>
+      {this.state.returned ? (
+        <ProductContainer skus={this.state.skus} />
+      ) : (
+        <Upload forward={this.goForward} />
+      )}
+
       </div>
     );
   }

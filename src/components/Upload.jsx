@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import store from "../redux/store"
-import { postImg } from "../redux/actions";
-import Arrow from '../arrow.svg';
+import store from "../redux/store";
+import { postImg, loading } from "../redux/actions";
+import Arrow from "../arrow.svg";
 
 export default class Upload extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ export default class Upload extends Component {
   }
 
   handleChange(evt) {
+    store.dispatch(loading(true));
     store.dispatch(postImg(evt));
   }
 
@@ -17,10 +18,17 @@ export default class Upload extends Component {
     return (
       <form encType="multipart/form-data" method="post" id="upload-form">
         <label className="file-upload" htmlFor="file-upload">
-        <Arrow fill="pink" />
+          <Arrow fill="pink" />
         </label>
-        <input onChange={this.handleChange.bind(this)} type="file" id="file-upload" name="file-upload" className="file-upload-input" multiple="" />
-    </form>
+        <input
+          onChange={this.handleChange.bind(this)}
+          type="file"
+          id="file-upload"
+          name="file-upload"
+          className="file-upload-input"
+          multiple=""
+        />
+      </form>
     );
   }
 }

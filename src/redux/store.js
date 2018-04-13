@@ -3,7 +3,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { loadState, saveState } from './localStorage';
-import { POST_IMG, RESET_APP } from "./actions";
+import { POST_IMG, RESET_APP, CHANGE_LOADING } from "./actions";
 
 const mainReducer = (state = initialState, action) => {
   if (action.type === POST_IMG) {
@@ -14,8 +14,18 @@ const mainReducer = (state = initialState, action) => {
       return reset(state, action);
   }
 
+  if (action.type === CHANGE_LOADING) {
+    return changeLoading(state, action);
+  }
+
   return state;
 };
+
+function changeLoading(state, action) {
+  var newState = Object.assign({}, state);
+  newState.loading = action.data;
+  return newState;
+}
 
 function reset(state, action) {
     var newState = Object.assign({}, state);
