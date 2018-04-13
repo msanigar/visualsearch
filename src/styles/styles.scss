@@ -14,9 +14,10 @@
 }
 
 body {
+  margin: 0;
   font-family: Missguided, sans-serif;
-  background-color: #1a1a1a;
-  color: #fefefe;
+  background-color: #fff;
+  color: #626262;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 1.3em;
@@ -26,12 +27,25 @@ body {
   text-align: center;
 }
 
+.header {
+  background: #010101;
+}
+
+.stylephile__title {
+  margin-top: 0;
+}
+
 .images {
+  max-width: 1000px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
+  margin: 32px auto 0 auto;
 
   div {
-    padding: 1em;
+    flex-basis: 40%;
+    padding: 5%;
     img {
       height: auto;
       width: 100%;
@@ -64,13 +78,14 @@ button {
   height: 40px;
   font-size: 14px;
   font-weight: 700;
-  border: 2px solid pink;
+  border: 2px solid #000;
+  color: #ff0000;
+  background: pink;
   cursor: pointer;
+  animation: rainbow 4s steps(36) infinite;
 
   &:hover {
-    background: pink;
-    border: 2px solid black;
-    color: white;
+    background: lightblue;
   }
 }
 
@@ -78,16 +93,28 @@ button {
   display: block;
   padding: 1rem;
   width: 100%;
-  border: 3px dashed #fff;
+  border: 3px dashed #626262;
   border-radius: 5px;
   cursor: pointer;
   margin: 0 auto;
+  animation: rainbow 4s steps(36) infinite;
 }
+
+@keyframes rainbow {
+  from {
+    filter:hue-rotate(10deg);
+  }
+  to {
+    filter:hue-rotate(360deg);
+  }
+}
+
 .file-upload img {
   transform: rotate(90deg);
-  filter: invert(1);
+  filter: sepia() saturate(10000%) hue-rotate(30deg);
   width: 90px;
 }
+
 #file-upload {
   opacity: 0;
 }
